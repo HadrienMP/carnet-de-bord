@@ -1,0 +1,18 @@
+{
+  "packages": [
+    "just@latest",
+    "pre-commit@latest",
+    "tmux@latest",
+    "postgresql@latest",
+    "black@latest",
+    "python@3.11.4",
+    "poetry@1.5.1",
+    "nodejs@18.16.1",
+    "process-compose@latest"
+  ],
+  "shell": {
+    "init_hook": [
+      "source $(cd backend && poetry env list --full-path | cut -d \" \" -f 1)/bin/activate"
+    ]
+  }
+}

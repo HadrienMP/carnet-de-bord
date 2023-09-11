@@ -1,0 +1,52 @@
+processes:
+  postgresql:
+    # Needed for tools but actually ran in docker
+    disabled: true
+  docker:
+    command: docker compose up
+    shutdown:
+      command: docker compose down
+    readiness_probe:
+      http_get:
+        host: 127.0.0.1
+        scheme: http
+        path: "/"
+        port: 5000
+  hasura-console:
+    command: just hasura-console --no-browser
+    depends_on:
+      docker:
+        condition: process_healthy
+    readiness_probe:
+      http_get:
+        host: 127.0.0.1
+        scheme: http
+        path: "/"
+        port: 9695
+  back:
+    depends_on:
+      docker:
+        condition: process_started
+    command: just start-backend
+    availability:
+      restart: always
+      max_restarts: 10
+    readiness_probe:
+      http_get:
+        host: 127.0.0.1
+        scheme: http
+        path: "/"
+        port: 8000
+  app:
+    depends_on:
+      docker:
+        condition: process_started
+    command: just start-app
+    availability:
+      restart: always
+    readiness_probe:
+      http_get:
+        host: 127.0.0.1
+        scheme: http
+        path: "/"
+        port: 3000

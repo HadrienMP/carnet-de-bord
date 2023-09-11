@@ -1,0 +1,62 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "black@latest": {
+      "last_modified": "2023-09-10T10:53:27Z",
+      "resolved": "github:NixOS/nixpkgs/78058d810644f5ed276804ce7ea9e82d92bee293#black",
+      "source": "devbox-search",
+      "version": "23.3.0"
+    },
+    "just@latest": {
+      "last_modified": "2023-09-10T10:53:27Z",
+      "resolved": "github:NixOS/nixpkgs/78058d810644f5ed276804ce7ea9e82d92bee293#just",
+      "source": "devbox-search",
+      "version": "1.14.0"
+    },
+    "nodejs@18.16.1": {
+      "last_modified": "2023-08-08T03:07:33Z",
+      "resolved": "github:NixOS/nixpkgs/844ffa82bbe2a2779c86ab3a72ff1b4176cec467#nodejs_18",
+      "source": "devbox-search",
+      "version": "18.16.1"
+    },
+    "poetry@1.5.1": {
+      "last_modified": "2023-09-03T04:15:46Z",
+      "plugin_version": "0.0.1",
+      "resolved": "github:NixOS/nixpkgs/d816b5ab44187a2dd84806630ce77a733724f95f#poetry",
+      "source": "devbox-search",
+      "version": "1.5.1"
+    },
+    "postgresql@latest": {
+      "last_modified": "2023-09-10T10:53:27Z",
+      "plugin_version": "0.0.2",
+      "resolved": "github:NixOS/nixpkgs/78058d810644f5ed276804ce7ea9e82d92bee293#postgresql",
+      "source": "devbox-search",
+      "version": "14.9"
+    },
+    "pre-commit@latest": {
+      "last_modified": "2023-09-10T10:53:27Z",
+      "resolved": "github:NixOS/nixpkgs/78058d810644f5ed276804ce7ea9e82d92bee293#pre-commit",
+      "source": "devbox-search",
+      "version": "3.3.3"
+    },
+    "process-compose@latest": {
+      "last_modified": "2023-09-10T10:53:27Z",
+      "resolved": "github:NixOS/nixpkgs/78058d810644f5ed276804ce7ea9e82d92bee293#process-compose",
+      "source": "devbox-search",
+      "version": "0.60.0"
+    },
+    "python@3.11.4": {
+      "last_modified": "2023-09-10T10:53:27Z",
+      "plugin_version": "0.0.1",
+      "resolved": "github:NixOS/nixpkgs/78058d810644f5ed276804ce7ea9e82d92bee293#python311",
+      "source": "devbox-search",
+      "version": "3.11.4"
+    },
+    "tmux@latest": {
+      "last_modified": "2022-06-08T13:21:18Z",
+      "resolved": "github:NixOS/nixpkgs/18de53ca965bd0678aaf09e5ce0daae05c58355a#tmux",
+      "source": "devbox-search",
+      "version": "3.3"
+    }
+  }
+}

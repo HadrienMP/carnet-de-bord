@@ -1,0 +1,47 @@
+processes:
+  docker:
+    command: docker compose -f docker-compose-test.yaml up
+    shutdown:
+      command: docker compose -f docker-compose-test-yaml down -v
+    readiness_probe:
+      http_get:
+        host: 127.0.0.1
+        scheme: http
+        path: "/"
+        port: 5001
+  back:
+    depends_on:
+      docker:
+        condition: process_started
+    command: just start-test-backend
+    availability:
+      restart: always
+      max_restarts: 10
+    readiness_probe:
+      http_get:
+        host: 127.0.0.1
+        scheme: http
+        path: "/"
+        port: 8001
+  app:
+    depends_on:
+      docker:
+        condition: process_started
+    command: just start-test-app
+    availability:
+      restart: always
+    readiness_probe:
+      http_get:
+        host: 127.0.0.1
+        scheme: http
+        path: "/"
+        port: 3001
+  codecept:
+    depends_on:
+      docker:
+        condition: process_healthy
+      app:
+        condition: process_healthy
+      back:
+        condition: process_healthy
+    command: cd e2e && CODECEPT_UI=true npm test
